@@ -1,4 +1,4 @@
-# Occupational Hearing Loss Analysis in Mining Industry SQL & BigQuery)
+# Occupational Hearing Loss Analysis in Mining Industry
 
 ## Project Overview
 This project simulates a data analytics pipeline for an occupational health department in a mining company. The goal is to monitor, track, and evaluate progressive hearing degradation among miners over time, isolating environmental factors (machinery noise exposure) and lifestyle compounding factors (smoking status).
