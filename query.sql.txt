@@ -1,0 +1,116 @@
+WITH miners AS (
+  SELECT 101 AS miner_id, 'José' AS first_name, 'Gomez' AS last_name, 'No smoker' AS smoking_status UNION ALL
+  SELECT 102, 'Francisca', 'Perez', 'Smoker' UNION ALL
+  SELECT 103, 'Carlos', 'Rodriguez', 'No smoker' UNION ALL
+  SELECT 104, 'Maria', 'Fernandez', 'No smoker' UNION ALL
+  SELECT 105, 'Alejandro', 'Garcia', 'Smoker' UNION ALL
+  SELECT 106, 'Ana', 'Martinez', 'No smoker' UNION ALL
+  SELECT 107, 'Luis', 'Lopez', 'Smoker' UNION ALL
+  SELECT 108, 'Carmen', 'Gonzalez', 'No smoker' UNION ALL
+  SELECT 109, 'Juan', 'Sanchez', 'No smoker' UNION ALL
+  SELECT 110, 'Elena', 'Ramirez', 'Smoker' UNION ALL
+  SELECT 111, 'Miguel', 'Torres', 'No smoker' UNION ALL
+  SELECT 112, 'Isabel', 'Diaz', 'No smoker' UNION ALL
+  SELECT 113, 'Jorge', 'Castro', 'Smoker' UNION ALL
+  SELECT 114, 'Lucia', 'Vargas', 'No smoker' UNION ALL
+  SELECT 115, 'Pedro', 'Morales', 'No smoker' UNION ALL
+  SELECT 116, 'Sofia', 'Ortiz', 'Smoker' UNION ALL
+  SELECT 117, 'Manuel', 'Reyes', 'No smoker' UNION ALL
+  SELECT 118, 'Clara', 'Ruiz', 'No smoker' UNION ALL
+  SELECT 119, 'Ricardo', 'Jimenez', 'Smoker' UNION ALL
+  SELECT 120, 'Rosa', 'Gutierrez', 'No smoker' UNION ALL
+  SELECT 121, 'Diego', 'Navarro', 'No smoker'
+),
+
+
+audiometric_exams AS (
+  SELECT 1 AS exam_id, 101 AS miner_id, DATE '2020-05-10' AS exam_date, 15.0 AS left_ear_loss_dB, 12.0 AS right_ear_loss_dB UNION ALL
+  SELECT 2, 101, DATE '2021-05-15', 18.5, 14.0 UNION ALL
+  SELECT 3, 101, DATE '2022-06-18', 27.0, 19.5 UNION ALL
+  SELECT 4, 101, DATE '2023-05-05', 32.0, 25.5 UNION ALL
+  SELECT 5, 101, DATE '2024-06-12', 41.5, 32.0 UNION ALL
+  SELECT 6, 102, DATE '2022-06-19', 22.5, 20.0 UNION ALL
+  SELECT 7, 102, DATE '2023-05-05', 26.5, 44.5 UNION ALL
+  SELECT 8, 102, DATE '2024-06-12', 38.5, 58.5 UNION ALL
+  SELECT 9, 103, DATE '2021-05-11', 21.0, 23.5 UNION ALL
+  SELECT 10, 103, DATE '2023-05-14', 61.5, 78.5 UNION ALL
+  SELECT 11, 104, DATE '2012-05-15', 12.5, 14.0 UNION ALL
+  SELECT 12, 104, DATE '2014-06-20', 16.0, 18.5 UNION ALL
+  SELECT 13, 104, DATE '2016-06-18', 28.5, 22.0 UNION ALL
+  SELECT 14, 105, DATE '2010-12-05', 42.0, 31.5 UNION ALL
+  SELECT 15, 105, DATE '2012-11-14', 56.5, 38.0 UNION ALL
+  SELECT 16, 106, DATE '2013-07-02', 15.0, 19.5 UNION ALL
+  SELECT 17, 106, DATE '2015-06-28', 21.0, 33.5 UNION ALL
+  SELECT 18, 106, DATE '2017-08-01', 25.0, 48.0 UNION ALL
+  SELECT 19, 107, DATE '2014-03-10', 35.0, 28.0 UNION ALL
+  SELECT 20, 107, DATE '2016-04-12', 46.5, 39.0 UNION ALL
+  SELECT 21, 107, DATE '2018-05-20', 58.0, 41.5 UNION ALL
+  SELECT 22, 108, DATE '2015-10-01', 18.0, 15.5 UNION ALL
+  SELECT 23, 108, DATE '2017-09-15', 29.5, 22.0 UNION ALL
+  SELECT 24, 109, DATE '2005-06-01', 24.0, 21.5 UNION ALL
+  SELECT 25, 109, DATE '2008-06-10', 43.5, 38.0 UNION ALL
+  SELECT 26, 109, DATE '2011-05-18', 72.0, 55.5 UNION ALL
+  SELECT 27, 110, DATE '2016-12-01', 32.5, 39.0 UNION ALL
+  SELECT 28, 110, DATE '2018-11-15', 52.0, 58.5 UNION ALL
+  SELECT 29, 111, DATE '2017-05-20', 19.0, 16.5 UNION ALL
+  SELECT 30, 111, DATE '2019-06-02', 31.0, 24.5 UNION ALL
+  SELECT 31, 112, DATE '2016-09-10', 22.0, 26.5 UNION ALL
+  SELECT 32, 112, DATE '2018-08-22', 38.5, 42.0 UNION ALL
+  SELECT 33, 113, DATE '2018-10-05', 45.0, 52.5 UNION ALL
+  SELECT 34, 113, DATE '2020-09-18', 51.0, 73.0 UNION ALL
+  SELECT 35, 114, DATE '2019-06-30', 15.0, 11.5 UNION ALL
+  SELECT 36, 114, DATE '2021-07-05', 23.5, 27.0 UNION ALL
+  SELECT 37, 115, DATE '2013-11-01', 28.0, 34.5 UNION ALL
+  SELECT 38, 115, DATE '2016-10-15', 41.0, 56.0 UNION ALL
+  SELECT 39, 115, DATE '2019-11-20', 49.5, 92.5 UNION ALL
+  SELECT 40, 116, DATE '2020-11-12', 33.0, 31.5 UNION ALL
+  SELECT 41, 116, DATE '2022-10-30', 46.5, 44.0 UNION ALL
+  SELECT 42, 117, DATE '2021-04-15', 14.5, 18.0 UNION ALL
+  SELECT 43, 117, DATE '2023-05-02', 22.0, 30.5 UNION ALL
+  SELECT 44, 118, DATE '2012-06-01', 21.5, 23.0 UNION ALL
+  SELECT 45, 118, DATE '2015-05-18', 35.0, 39.5 UNION ALL
+  SELECT 46, 118, DATE '2018-07-10', 57.0, 59.5 UNION ALL
+  SELECT 47, 119, DATE '2023-02-20', 38.0, 42.5 UNION ALL
+  SELECT 48, 119, DATE '2025-03-01', 41.0, 63.5 UNION ALL
+  SELECT 49, 120, DATE '2023-09-01', 16.5, 15.0 UNION ALL
+  SELECT 50, 120, DATE '2025-08-15', 28.0, 24.5 UNION ALL
+  SELECT 51, 121, DATE '2021-03-10', 29.5, 35.0 UNION ALL
+  SELECT 52, 121, DATE '2023-04-05', 34.0, 48.5
+),
+
+WorstEarCalculated AS (
+  SELECT
+    m.miner_id,
+    CONCAT(m.first_name, ' ', m.last_name) AS worker_name,
+    m.smoking_status,
+    e.exam_date,
+    IF(e.left_ear_loss_dB >= e.right_ear_loss_dB, e.left_ear_loss_dB, e.right_ear_loss_dB) AS worst_ear_loss_dB
+  FROM miners m
+  JOIN audiometric_exams e ON m.miner_id = e.miner_id  
+),
+
+
+YearlyProgression AS (
+  SELECT
+    miner_id,
+    worker_name,
+    smoking_status,
+    exam_date,
+    worst_ear_loss_dB,
+    LAG(exam_date, 1) OVER (PARTITION BY miner_id ORDER BY exam_date) AS prev_exam_date,
+    LAG(worst_ear_loss_dB, 1) OVER (PARTITION BY miner_id ORDER BY worst_ear_loss_dB) AS prev_worst_loss
+  FROM WorstEarCalculated
+)
+
+
+SELECT
+  miner_id,
+  worker_name,
+  smoking_status,
+  prev_exam_date,
+  exam_date AS current_exam_date,
+  prev_worst_loss AS prev_exam_loss_dB,
+  worst_ear_loss_dB AS current_exam_loss_dB,
+  ROUND(worst_ear_loss_dB - COALESCE(prev_worst_loss, worst_ear_loss_dB), 2) AS dB_worsening_delta
+FROM YearlyProgression
+ORDER BY miner_id, current_exam_date;
